@@ -16,7 +16,7 @@ cron.schedule("* * * * *", async () => {
     process.env.IQAIR_API_KEY,
     config.apiUrls.iqair
   );
-  console.log("Air quality data triggered....");
+  console.log(`Air quality data triggered: ${new Date()}`);
   try {
     await iqairService.createAirQualityForParis();
   } catch (error) {
