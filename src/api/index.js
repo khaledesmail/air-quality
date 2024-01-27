@@ -4,7 +4,7 @@ const config = require("../config");
 class ApiAdapter {
   constructor(apiKey, apiUrl) {
     this.apiKey = apiKey;
-    this.apiUrl = apiUrl || config.apiUrls.iqair; // Use config if not provided
+    this.apiUrl = apiUrl || config.apiUrls.iqair;
   }
 
   async get(endpoint, params = {}) {

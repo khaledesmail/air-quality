@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khaledesmail/air-quality.git"
+    "url": "git@github.com:khaledesmail/air-quality.git"
   },
   "keywords": [
     "node.js"
@@ -17,9 +17,9 @@
   "author": "Khaled Esmail",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/khaledesmail/air-quality/issues"
+    "url": "https://github.com/khaledesmail/air-quality.git/issues"
   },
-  "homepage": "https://github.com/khaledesmail/air-quality#readme",
+  "homepage": "https://github.com/khaledesmail/air-quality.git/#readme",
   "dependencies": {
     "assertion-error": "^2.0.1",
     "axios": "^1.6.5",
