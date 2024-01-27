@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  title: Air Quality API
+  version: 1.0.0
+  description: API to get air quality information using IQAir service
+servers:
+  - url: http://localhost:3000/rest/api/v1/iqair
+    description: Local development server
+paths:
+  /get_air_quality:
+    get:
+      summary: Get air quality information for a specific location
+      parameters:
+        - name: longitude
+          in: query
+          required: true
+          description: Longitude of the location
+          schema:
+            type: string
+        - name: latitude
+          in: query
+          required: true
+          description: Latitude of the location
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                Result:
+                  Pollution:
+                    ts: "2024-01-24T22:00:00.000Z"
+                    aqius: 45
+                    mainus: "p2"
+                    aqicn: 29
+                    maincn: "p1"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              example:
+                error: Longitude and latitude are required parameters.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              example:
+                error: Internal Server Error
+  /most_polluted_datetime:
+    get:
+      summary: Get datetime when the Paris zone is most polluted
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                mostPollutedDatetime: '2024-01-24T22:00:00.000Z'
